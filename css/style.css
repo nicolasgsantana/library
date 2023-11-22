@@ -2,6 +2,8 @@
 
 :root {
     --title-font: 'Arvo', serif;
+    --red: #EF3E36;
+    --green: #3EFF8B;
     font-family: 'Josefin Sans', sans-serif;
     color: #212529;
 }
@@ -83,19 +85,34 @@ hr {
 
 .card {
     box-sizing: border-box;
+    position: relative;
 
     border: 5px solid #212529;
     border-radius: 16px;
     background-color: #F8F9FA;
-    padding: 16px;
+    padding: 24px 16px 16px 16px;
     width: 300px;
-    height: 400px;
+    height: 250px;
 
     font-size: 20px;
 
     display: flex;
     flex-direction: column;
     gap: 16px;
+}
+
+.status {
+    position: absolute;
+    height: 8px;
+    width: 100%;
+    background-color: var(--red);
+    top: 0;
+    left: 0;
+    border-radius: 16px 16px 0 0;
+}
+
+.status.read {
+    background-color: var(--green) ;
 }
 
 .card .title {
@@ -105,4 +122,28 @@ hr {
 .card .author {
     font-style: italic;
     margin-bottom: auto;
+}
+
+.card button {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 20px;
+    padding: 8px;
+
+    border: #212529 1px solid;
+    border-radius: 8px;
+
+    background-color: var(--red);
+    filter: brightness(95%);
+}
+
+.card button.read {
+    background-color: var(--green);
+}
+
+.card button:hover {
+    filter: brightness(100%);
+}
+
+.card button:active {
+    filter: brightness(90%);
 }
