@@ -16,7 +16,8 @@
 body {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    background-color: #DEE2E6;
+    min-height: 100vh;
 }
 
 h1, h2 {
@@ -68,8 +69,6 @@ footer a:hover {
 
 main {
     padding: 16px;
-    background-color: #DEE2E6;
-    height: 100%;
 }
 
 hr {
@@ -80,7 +79,11 @@ hr {
 
 .card-container {
     display: flex;
+    justify-content: left;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin: 0 auto;
 }
 
 .card {
@@ -116,7 +119,8 @@ hr {
 }
 
 .card .title {
-    font-size: 24px;
+    font-size: 22px;
+    font-family: var(--title-font);
 }
 
 .card .author {
@@ -128,6 +132,7 @@ hr {
     font-family: 'Josefin Sans', sans-serif;
     font-size: 20px;
     padding: 8px;
+    color: #F8F9FA;
 
     border: #212529 1px solid;
     border-radius: 8px;
@@ -138,6 +143,7 @@ hr {
 
 .card button.read {
     background-color: var(--green);
+    color: #212529;
 }
 
 .card button:hover {
