@@ -153,3 +153,31 @@ hr {
 .card button:active {
     filter: brightness(90%);
 }
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section-header button {
+    display: flex;
+    align-items: center;
+
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 20px;
+
+    padding: 8px;
+    border: 2px #212529 solid;
+    border-radius: 8px;
+    background-color: #E9ECEF;
+    filter: brightness(95%);
+}
+
+.section-header button:hover {
+    filter: brightness(100%);
+}
+
+.section-header button:active {
+    filter: brightness(90%);
+}
