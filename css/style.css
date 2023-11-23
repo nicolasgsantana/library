@@ -118,20 +118,19 @@ hr {
     background-color: var(--green) ;
 }
 
-.card svg {
+.card img {
     position: absolute;
     right: 4px;
     top: 4px;
     height: 24px;
-    fill: #212529;
     border-radius: 100%;
 }
 
-.card svg:hover {
+.card img:hover {
     background-color: #2125291f;
 }
 
-.card svg:active {
+.card img:active {
     background-color: #21252942;
 }
 
