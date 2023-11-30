@@ -1,6 +1,6 @@
 const dialog = document.querySelector("dialog");
 const addBookBtn = document.querySelector(".section-header button");
-const closeDialogBtn = document.querySelector("dialog>div>div>button");
+const closeDialogBtn = document.querySelector("dialog>img");
 const submitBtn = document.getElementById("submit");
 
 const form = document.querySelector("form");
@@ -45,6 +45,18 @@ submitBtn.addEventListener("click", (e) => {
         dialog.close();
         addBookToLibrary(bookTitle.value, bookAuthor.value, bookPages.value, bookReadStatus.value);
         form.reset();
+    }
+});
+
+dialog.addEventListener("click", e => {
+    const dialogDimensions = dialog.getBoundingClientRect()
+    if (
+        e.clientX < dialogDimensions.left ||
+        e.clientX > dialogDimensions.right ||
+        e.clientY < dialogDimensions.top ||
+        e.clientY > dialogDimensions.bottom
+    ) {
+        dialog.close()
     }
 });
 

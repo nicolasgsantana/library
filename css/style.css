@@ -200,8 +200,73 @@ hr {
 
 dialog {
     margin: auto;
+    padding: 16px;
+    border-radius: 16px;
+    background-color: #E9ECEF;
 }
 
 dialog::backdrop {
     background-color: #2125299a;
+}
+
+dialog>div {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+dialog h2 {
+    font-size: 32px;
+    padding: 16px;
+}
+
+dialog>img {
+    position: absolute;
+    right: 4px;
+    top: 4px;
+    height: 24px;
+    border-radius: 100%;
+}
+
+dialog>img:hover {
+    background-color: #2125291f;
+}
+
+dialog>img:active {
+    background-color: #21252942;
+}
+
+form {
+    display: grid;
+    grid-template-rows: repeat(auto-fill, min-content);
+    row-gap: 16px;
+}
+
+form button {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 20px;
+    padding: 8px;
+
+    color: #F8F9FA;
+    border: 2px #F8F9FA solid;
+    border-radius: 8px;
+    background-color: #212529;
+    filter: brightness(90%);
+}
+
+form button:hover {
+    filter: brightness(100%);
+}
+
+form button:active {
+    filter: brightness(80%);
+}
+
+label {
+    margin-bottom: -14px;
+    font-size: 20px;
+}
+
+input, select {
+    font-size: 16px;
 }
