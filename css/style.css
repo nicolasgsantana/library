@@ -197,3 +197,11 @@ hr {
 .section-header button:active {
     filter: brightness(90%);
 }
+
+dialog {
+    margin: auto;
+}
+
+dialog::backdrop {
+    background-color: #2125299a;
+}
