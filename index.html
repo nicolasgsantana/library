@@ -41,25 +41,22 @@
   </footer>
   <dialog>
     <div>
-      <button><img src="./img/close-thick.png" alt="close image"></button>
-      <h2>Add New Book</h2>
+      <div>
+        <h2>Add New Book</h2>
+        <button><img src="./img/close-thick.png" alt="close image"></button>
+      </div>
       <form method="dialog">
-        <p>
-          <label for="title">Title: </label>
-          <input type="text" name="title" id="title" required>
-        </p>
-        <p>
-          <label for="author">Author: </label>
-          <input type="text" name="author" id="author" required>
-        </p>
-        <p>
-          <label for="pages">Pages: </label>
-          <input type="number" name="pages" id="pages" required>
-        </p>
-        <p>
-          <label for="has-read">Already read?</label>
-          <input type="checkbox" name="hasRead" id="has-read">
-        </p>
+        <label for="title">Title: </label>
+        <input type="text" name="title" id="title" required autofocus>
+        <label for="author">Author: </label>
+        <input type="text" name="author" id="author" required>
+        <label for="pages">Pages: </label>
+        <input type="number" min="1" name="pages" id="pages" required>
+        <label for="has-read">Have you read this book?</label>
+        <select name="has-read" id="has-read">
+          <option value="false">No, I haven't read it yet</option>
+          <option value="true">Yes, I have read this book</option>
+        </select>
         <button type="submit" value="default" id="submit">Add Book</button>
     </div>
     </form>

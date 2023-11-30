@@ -1,6 +1,6 @@
 const dialog = document.querySelector("dialog");
 const addBookBtn = document.querySelector(".section-header button");
-const closeDialogBtn = document.querySelector("dialog>button");
+const closeDialogBtn = document.querySelector("dialog>div>div>button");
 const submitBtn = document.getElementById("submit");
 
 const form = document.querySelector("form");
@@ -20,7 +20,7 @@ function Book(title, author, pages, hasRead) {
 }
 
 function addBookToLibrary(title, author, pages, hasRead) {
-    myLibrary.push(new Book(title, author, Number(pages), hasRead === "on" ? true : false));
+    myLibrary.push(new Book(title, author, Number(pages), hasRead === "true" ? true : false));
 }
 
 function showBooks() {
@@ -37,9 +37,14 @@ closeDialogBtn.addEventListener("click", () => {
 });
 
 submitBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    dialog.close();
-    addBookToLibrary(bookTitle.value, bookAuthor.value, bookPages.value, bookReadStatus.value);
-    form.reset();
+    if (bookTitle.value === '' || bookAuthor.value === '') {
+        alert("Please insert the book title and author name")
+    }
+    else {
+        e.preventDefault();
+        dialog.close();
+        addBookToLibrary(bookTitle.value, bookAuthor.value, bookPages.value, bookReadStatus.value);
+        form.reset();
+    }
 });
 
