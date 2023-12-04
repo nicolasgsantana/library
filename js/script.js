@@ -18,7 +18,6 @@ function Book(title, author, pages, hasRead) {
     this.author = author;
     this.pages = pages;
     this.hasRead = hasRead;
-    this.id = myLibrary.length;
 
     this.toggleReadStatus = function () {
         if (this.hasRead) {
@@ -53,6 +52,13 @@ function createCard(book) {
     const closeBtn = document.createElement("img");
     closeBtn.src = "../img/close-thick.png";
     closeBtn.alt = "remove button";
+
+    closeBtn.addEventListener("click", e => {
+        let index = Array.from(cardContainer.children).indexOf(cardDiv);
+        cardDiv.remove();
+        myLibrary.splice(index, 1);
+    });
+
     cardDiv.appendChild(closeBtn);
 
     const title = document.createElement("p");
@@ -77,7 +83,7 @@ function createCard(book) {
     else {
         readButton.innerText = "Not read";
     }
-    readButton.addEventListener("click", (e) => {
+    readButton.addEventListener("click", e => {
         book.toggleReadStatus();
         readButton.classList.toggle("read");
         statusDiv.classList.toggle("read");
@@ -120,16 +126,3 @@ submitBtn.addEventListener("click", (e) => {
         form.reset();
     }
 });
-
-dialog.addEventListener("click", e => {
-    const dialogDimensions = dialog.getBoundingClientRect()
-    if (
-        e.clientX < dialogDimensions.left ||
-        e.clientX > dialogDimensions.right ||
-        e.clientY < dialogDimensions.top ||
-        e.clientY > dialogDimensions.bottom
-    ) {
-        dialog.close()
-    }
-});
-
