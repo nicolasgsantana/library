@@ -37,8 +37,8 @@ closeDialogBtn.addEventListener("click", () => {
 });
 
 submitBtn.addEventListener("click", (e) => {
-    if (bookTitle.value === '' || bookAuthor.value === '') {
-        alert("Please insert the book title and author name")
+    if (bookTitle.value === '' || bookAuthor.value === '' || bookPages.value === '') {
+        //pass
     }
     else {
         e.preventDefault();
