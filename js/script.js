@@ -9,7 +9,7 @@ const bookAuthor = document.getElementById("author");
 const bookPages = document.getElementById("pages");
 const bookReadStatus = document.getElementById("has-read");
 
-const cardContainer = document.querySelector(".card-container")
+const cardContainer = document.querySelector(".card-container");
 
 const myLibrary = [];
 
@@ -21,11 +21,11 @@ function Book(title, author, pages, hasRead) {
     this.id = myLibrary.length;
 
     this.toggleReadStatus = function () {
-        if (hasRead) {
-            hasRead = false;
+        if (this.hasRead) {
+            this.hasRead = false;
         }
         else {
-            hasRead = true;
+            this.hasRead = true;
         }
     };
 }
@@ -83,11 +83,13 @@ function createCard(book) {
         statusDiv.classList.toggle("read");
 
         if (book.hasRead) {
-            readButton.innerText = "Read"
+            e.target.textContent = "Read";
         }
         else {
-            readButton.innerText = "Not read"
+            e.target.textContent = "Not read";
         }
+
+        console.log(book);
     });
     cardDiv.appendChild(readButton);
 
