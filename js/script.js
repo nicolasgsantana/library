@@ -14,6 +14,7 @@ const placeholder = document.querySelector(".placeholder");
 
 const myLibrary = [];
 
+
 function Book(title, author, pages, hasRead) {
     this.title = title;
     this.author = author;
@@ -54,12 +55,7 @@ function createCard(book) {
         cardDiv.remove();
         myLibrary.splice(index, 1);
 
-        if (myLibrary.length > 0) {
-            placeholder.style.display = "none";
-        }
-        else {
-            placeholder.style.display = "block";
-        }
+        updatePlaceholder();
     });
 
     cardDiv.appendChild(closeBtn);
@@ -109,6 +105,16 @@ function addCard(book) {
     cardContainer.appendChild(createCard(book));
 }
 
+function updatePlaceholder() {
+    if (myLibrary.length > 0) {
+        placeholder.style.display = "none";
+    }
+    else {
+        placeholder.style.display = "block";
+    }
+}
+
+
 addBookBtn.addEventListener("click", () => {
     dialog.showModal();
 });
@@ -126,14 +132,7 @@ submitBtn.addEventListener("click", (e) => {
         dialog.close();
         addBookToLibrary(bookTitle.value, bookAuthor.value, bookPages.value, bookReadStatus.value);
         addCard(myLibrary[myLibrary.length - 1]);
-
-        if (myLibrary.length > 0) {
-            placeholder.style.display = "none";
-        }
-        else {
-            placeholder.style.display = "block";
-        }
-
+        updatePlaceholder();
         form.reset();
     }
 });
