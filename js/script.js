@@ -39,7 +39,6 @@ function showBooks() {
 }
 
 function createCard(book) {
-    // Create Card Div
     const cardDiv = document.createElement("div");
     cardDiv.classList.add("card");
 
