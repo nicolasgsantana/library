@@ -34,10 +34,6 @@ function addBookToLibrary(title, author, pages, hasRead) {
     myLibrary.push(new Book(title, author, Number(pages), hasRead === "true" ? true : false));
 }
 
-function showBooks() {
-    myLibrary.forEach(book => console.log(book));
-}
-
 function createCard(book) {
     const cardDiv = document.createElement("div");
     cardDiv.classList.add("card");
