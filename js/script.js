@@ -10,6 +10,7 @@ const bookPages = document.getElementById("pages");
 const bookReadStatus = document.getElementById("has-read");
 
 const cardContainer = document.querySelector(".card-container");
+const placeholder = document.querySelector(".placeholder");
 
 const myLibrary = [];
 
@@ -57,6 +58,13 @@ function createCard(book) {
         let index = Array.from(cardContainer.children).indexOf(cardDiv);
         cardDiv.remove();
         myLibrary.splice(index, 1);
+
+        if (myLibrary.length > 0) {
+            placeholder.style.display = "none";
+        }
+        else {
+            placeholder.style.display = "block";
+        }
     });
 
     cardDiv.appendChild(closeBtn);
@@ -123,6 +131,14 @@ submitBtn.addEventListener("click", (e) => {
         dialog.close();
         addBookToLibrary(bookTitle.value, bookAuthor.value, bookPages.value, bookReadStatus.value);
         addCard(myLibrary[myLibrary.length - 1]);
+
+        if (myLibrary.length > 0) {
+            placeholder.style.display = "none";
+        }
+        else {
+            placeholder.style.display = "block";
+        }
+
         form.reset();
     }
 });
