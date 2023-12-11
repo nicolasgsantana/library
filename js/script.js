@@ -47,7 +47,7 @@ function createCard(book) {
     cardDiv.appendChild(statusDiv);
 
     const closeBtn = document.createElement("img");
-    closeBtn.src = "../img/close-thick.png";
+    closeBtn.src = "./img/close-thick.png";
     closeBtn.alt = "remove button";
 
     closeBtn.addEventListener("click", e => {
