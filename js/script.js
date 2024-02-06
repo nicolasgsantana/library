@@ -14,21 +14,43 @@ const placeholder = document.querySelector(".placeholder");
 
 const myLibrary = [];
 
+class Book {
+    #title;
+    #author;
+    #pages;
+    #hasRead;
 
-function Book(title, author, pages, hasRead) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.hasRead = hasRead;
+    constructor(title, author, pages, hasRead) {
+        this.#title = title;
+        this.#author = author;
+        this.#pages = pages;
+        this.#hasRead = hasRead;
+    }
 
-    this.toggleReadStatus = function () {
+    get title() {
+        return this.#title;
+    }
+
+    get author() {
+        return this.#author;
+    }
+
+    get pages() {
+        return this.#pages;
+    }
+
+    get hasRead() {
+        return this.#hasRead;
+    }
+
+    toggleReadStatus() {
         if (this.hasRead) {
-            this.hasRead = false;
+            this.#hasRead = false;
         }
         else {
-            this.hasRead = true;
+            this.#hasRead = true;
         }
-    };
+    }
 }
 
 function addBookToLibrary(title, author, pages, hasRead) {
